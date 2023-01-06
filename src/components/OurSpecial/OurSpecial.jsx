@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, Typography, useMediaQuery } from "@mui/material";
 
 import ClockImg from "../assests/wall-clock-icon.svg";
 import PhoneImg from "../assests/phone-icon.svg";
@@ -7,6 +7,8 @@ import Address from "../assests/address-icon.svg";
 import Food from "../assests/food-3.png";
 import Food1 from "../assests/food-1.png";
 import Star from "../assests/3star.png";
+import Food2 from "../assests/food-2.png";
+import Food7 from "../assests/food-7.png";
 
 import {
   Title,
@@ -18,6 +20,8 @@ import {
   BookTable,
 } from "../Header/StyledComp";
 const OurSpecial = () => {
+  const matchesMeida = useMediaQuery("(max-width: 700px)");
+
   return (
     <Box mb="4rem">
       <Container maxWidth="lg">
@@ -168,6 +172,100 @@ const OurSpecial = () => {
             >
               Book Table
             </BookTable>
+          </Grid>
+        </Grid>
+        <Title2 style={{ marginTop: "7rem" }}>Top Dishes </Title2>
+        <Grid
+          container
+          mt="1rem"
+          display="flex"
+          alignItems="center"
+          justifyContent="space-between"
+          gap="10px"
+        >
+          <Grid item xs={12} sm={6} md={3.8}>
+            <Box
+              borderRadius="12px"
+              backgroundColor="#D6E5D8"
+              p="0.8rem"
+              display="flex"
+              alignItems="flex-start"
+              gap="20px"
+            >
+              <Box>
+                <img
+                  src={Food1}
+                  alt=""
+                  style={{
+                    borderRadius: "12px",
+                    width: !matchesMeida ? "160px" : "100%",
+                  }}
+                />
+              </Box>
+              <Box>
+                <Text fontSize="20px" fontWeight="700">
+                  Vegan Salad bowl{" "}
+                </Text>{" "}
+                <TextPrice>12$</TextPrice>
+                <img src={Star} alt="" />
+              </Box>
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3.8}>
+            <Box
+              borderRadius="12px"
+              backgroundColor="#D6E5D8"
+              p="0.8rem"
+              display="flex"
+              alignItems="flex-start"
+              gap="20px"
+            >
+              <Box>
+                <img
+                  src={Food2}
+                  alt=""
+                  style={{
+                    borderRadius: "12px",
+                    width: !matchesMeida ? "160px" : "100%",
+                  }}
+                />
+              </Box>
+              <Box>
+                <Text fontSize="20px" fontWeight="700" textAlign="left">
+                  Vegan Pesto Zoodles{" "}
+                </Text>{" "}
+                <TextPrice>12$</TextPrice>
+                <img src={Star} alt="" />
+              </Box>
+            </Box>
+          </Grid>
+          <Grid item xs={12} sm={6} md={3.8}>
+            <Box
+              borderRadius="12px"
+              backgroundColor="#D6E5D8"
+              p="0.8rem"
+              display="flex"
+              alignItems="flex-start"
+              gap="20px"
+            >
+              <Box>
+                <img
+                  src={Food7}
+                  alt=""
+                  style={{
+                    borderRadius: "12px",
+                    width: !matchesMeida ? "160px" : "100%",
+                  }}
+                />
+              </Box>
+              <Box>
+                <Text fontSize="20px" fontWeight="700">
+                  Hot Green Bowl
+                </Text>{" "}
+                <TextPrice>12$</TextPrice>
+                <img src={Star} alt="" />
+              </Box>
+            </Box>
           </Grid>
         </Grid>
       </Container>

@@ -43,11 +43,12 @@ export const BookTable = styled(Button)(({ theme }) => ({
 }));
 export const Text = styled(Typography)(({ theme }) => ({
   color: "#3f3c3c",
-  fontSize: "20px",
+  fontSize: (props) => props.fontSize,
   [theme.breakpoints.down("md")]: {
-    textAlign: "center",
+    textAlign: (props) => props.textAlign,
     fontSize: "15px",
   },
+  fontWeight: (props) => props.fontWeight,
   fontFamily: "Poppins",
 }));
 export const TextPara = styled(Typography)(({ theme }) => ({
@@ -71,7 +72,7 @@ export const Title2 = styled(Typography)(({ theme }) => ({
 }));
 export const TextPrice = styled(Typography)(({ theme }) => ({
   color: "#26643B",
-  fontSize: "20px",
+  fontSize: (props) => props.fontSize,
   marginTop: "10px",
   [theme.breakpoints.down("md")]: {
     fontSize: "20px",
