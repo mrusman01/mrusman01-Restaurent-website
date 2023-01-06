@@ -1,41 +1,19 @@
 import React from "react";
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
 
 import HeroImg from "../assests/heroImg.png";
-import styled from "@emotion/styled";
+import { Title, BookTable, MyBtn } from "./StyledComp";
 
-const MyBtn = styled(Button)(({ theme }) => ({
-  color: "#26643b",
-  fontSize: "16px",
-  fontFamily: "Raleway",
-  fontWeight: 700,
-  padding: "0.5rem",
-  textDecoration: "none",
-  margin: "0px 1rem",
-}));
-
-const BookTable = styled(Button)({
-  backgroundColor: "#26643B",
-  color: "#e8e8e8",
-  fontSize: "16px",
-  fontWeight: 700,
-  padding: "8px 20px",
-  borderRadius: "10px",
-  "&:hover": {
-    color: "#fff",
-    backgroundColor: "#26643b",
-  },
-});
-const Text = styled(Typography)(({ theme }) => ({
-  color: "#3f3c3c",
-  fontSize: "2.8rem",
-  fontWeight: "500",
-  fontFamily: "Poppins",
-  [theme.breakpoints.down("md")]: {
-    textAlign: theme.center,
-  },
-}));
 const HeroSection = () => {
+  const matchesMeida = useMediaQuery("(max-width: 700px)");
+
   return (
     <Box>
       <Container maxWidth="lg">
@@ -48,15 +26,20 @@ const HeroSection = () => {
           direction={{ xs: "column-reverse", md: "row" }}
         >
           <Grid item xs={12} sm={6} md={4}>
-            <Text>The flavor of tradition</Text>
-            <Typography>
+            <Title>The flavor of tradition</Title>
+            <Typography textAlign={{ xs: "center", md: "left" }}>
               We are a multi-cuisine restaurant offering a wide variety of food
               experience in both casual and fine dining environment.{" "}
             </Typography>
 
-            <Box mt="1rem">
+            <Box
+              mt="1rem"
+              display="flex"
+              alignItems="center"
+              justifyContent={{ xs: "center", md: "flex-start" }}
+            >
               <BookTable>Explore Menu</BookTable>
-              <MyBtn>Book Table</MyBtn>
+              <MyBtn mt={{ xs: "0px", md: "1rem" }}>Book Table</MyBtn>
             </Box>
           </Grid>
           <Grid item xs={12} sm={6} md={6}>

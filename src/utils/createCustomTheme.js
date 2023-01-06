@@ -4,13 +4,13 @@ export const createCustomTheme = (mode) =>
   createTheme({
     palette: {
       mode,
-      //   primary: {
-      //     main: '#00419E',
-      //     light: '#0b63e0',
-      //   },
-      //   secondary: {
-      //     main: '#D6EDF6',
-      //   },
+      // primary: {
+      //   main: "#00419E",
+      //   light: "#0b63e0",
+      // },
+      // secondary: {
+      //   main: "#D6EDF6",
+      // },
     },
     typography: {
       fontFamily: ['"Poppins"', '"Raleway"', "sans-serif"].join(","),
